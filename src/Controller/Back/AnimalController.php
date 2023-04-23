@@ -28,7 +28,6 @@ class AnimalController extends AbstractController
         /** @var User */
         if (!$this->isGranted('ROLE_ADMIN')) {
             // $test = $user->get->association;
-            // dd($test);
             return $this->render('back/animal/index.html.twig', [
             'animals' => $animalRepository->findByAssociation($user->getAssociation())
         ]);
@@ -67,7 +66,6 @@ class AnimalController extends AbstractController
      */
     public function show(Animal $animal): Response
     {
-        //dd($animal->getGardenNeeded());
         return $this->render('back/animal/show.html.twig', [
             'animal' => $animal,
         ]);

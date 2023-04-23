@@ -48,7 +48,6 @@ class UserController extends AbstractController
             // On écrase le mot de passe en clair par le mot de passe haché
             $user->setPassword($hashedPassword);
 
-            // dd($user);
             
             $entityManager->persist($user);
             $entityManager->flush();
